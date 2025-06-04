@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚜 A map of your local farmer's markets around Zurich</title>
+    <title>🚜 Farm fresh products around Zurich</title>
     <style>
-        /* Basic reset and fullscreen styles */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Prevents scrollbars on the body */
-            font-family: 'Inter', sans-serif; /* Using Inter font as a general good practice */
+            width: 100%;
+            overflow: hidden; /* Prevent scrollbars on the body itself */
+            font-family: 'Inter', sans-serif; /* Consistent font */
+        }
+        .iframe-container {
+            display: flex; /* Use flexbox to make iframe fill container */
+            flex-direction: column; /* Stack elements vertically */
+            height: 100vh; /* Full viewport height */
+            width: 100vw; /* Full viewport width */
         }
         iframe {
-            display: block; /* Removes bottom space under iframe */
-            width: 100vw;   /* Viewport width */
-            height: 100vh;  /* Viewport height */
-            border: none;   /* Removes default iframe border */
+            flex-grow: 1; /* Allows iframe to take all available vertical space */
+            width: 100%; /* Ensures iframe takes full width */
+            border: none; /* Removes default iframe border */
+            display: block; /* Ensures iframe behaves as a block element */
         }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,10 +38,14 @@
         </div>
     </div>
     -->
+
+    <div class="iframe-container">
+        <iframe src="https://www.pampam.city/p/mYvfEGhin09utcGn9Qd9?47.392165,8.594659,14.71" title="🚜 Farm fresh products around Zurich" allowfullscreen>
+            <p>Your browser does not support iframes. Please visit <a href="link">the content directly</a>.</p>
+        </iframe>
+    </div>
     
-    <iframe src="https://www.pampam.city/p/mYvfEGhin09utcGn9Qd9?47.392165,8.594659,14.71" title="🚜 Farm fresh products around Zurich">
-        <p>Your browser does not support iframes. Please visit <a href="link">the content directly</a>.</p>
-    </iframe>
+    
     
 </body>
 </html>
